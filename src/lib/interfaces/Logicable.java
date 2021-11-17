@@ -9,6 +9,7 @@ import lib.exceptions.UserExistException;
 import lib.exceptions.PasswordDontMatchException;
 import lib.exceptions.TooManyUsersException;
 import lib.exceptions.ConnectException;
+import lib.exceptions.EmailFoundException;
 
 /**
  * Esta clase es la interfaz que va a ser utilizada por las factorías para hacer
@@ -58,10 +59,14 @@ public interface Logicable {
      * ya hay 10 usuarios conectados
      * @throws ConnectException Lanza la excepcion cuando no se ha podido conectar
      * con la base de datos
+     * @throws lib.exceptions.EmailFoundException excepcion añadida para que el email
+     * introducido no sea igual a uno ya existente
+     * 
      */
+    
     
     public User signUp(User user) throws IncorrectUserException, IncorrectPasswordException, 
             IncorrectEmailException, UserExistException, PasswordDontMatchException,
-            TooManyUsersException, ConnectException;
+            TooManyUsersException, ConnectException, EmailFoundException;
     
 }
