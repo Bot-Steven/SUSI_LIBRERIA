@@ -9,6 +9,7 @@ import lib.exceptions.UserExistException;
 import lib.exceptions.PasswordDontMatchException;
 import lib.exceptions.TooManyUsersException;
 import lib.exceptions.ConnectException;
+import lib.exceptions.EmailExistsException;
 
 /**
  * Esta clase es la interfaz que va a ser utilizada por las factorías para hacer
@@ -61,7 +62,7 @@ public interface Logicable {
      */
     
     public User signUp(User user) throws IncorrectUserException, IncorrectPasswordException, 
-            IncorrectEmailException, UserExistException, PasswordDontMatchException,
-            TooManyUsersException, ConnectException;
+            IncorrectEmailException, UserExistException, EmailExistsException,
+            PasswordDontMatchException, TooManyUsersException, ConnectException;
     
 }
